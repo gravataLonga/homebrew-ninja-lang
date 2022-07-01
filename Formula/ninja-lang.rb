@@ -5,21 +5,21 @@
 class NinjaLang < Formula
   desc "Ninja Programming Language Binary"
   homepage "https://ninja.jonathan.pt/"
-  version "0.2.1"
+  version "0.2.2"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/gravataLonga/ninja/releases/download/v0.2.1/ninja-lang_darwin_arm64.tar.gz"
-      sha256 "d285396a7a89ac585c1837f4b3dcaf9511509f3721b69c99fe7c113bf2df5537"
+    if Hardware::CPU.intel?
+      url "https://github.com/gravataLonga/ninja/releases/download/v0.2.2/ninja-lang_darwin_amd64.tar.gz"
+      sha256 "1f0e58365ef8e224e7a89840d0fd6da82026e57c3a79b43f7d2a94d061533668"
 
       def install
         bin.install "ninja-lang"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/gravataLonga/ninja/releases/download/v0.2.1/ninja-lang_darwin_amd64.tar.gz"
-      sha256 "f497ee765b66eca7e146b664031439dc135bc7d46f919f225f6e1d898c5bcefe"
+    if Hardware::CPU.arm?
+      url "https://github.com/gravataLonga/ninja/releases/download/v0.2.2/ninja-lang_darwin_arm64.tar.gz"
+      sha256 "8ed89f77a3007cf025c0b4a52d11a1a7a09d90d604427d8ec5cd1f8709fe0201"
 
       def install
         bin.install "ninja-lang"
@@ -29,24 +29,24 @@ class NinjaLang < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gravataLonga/ninja/releases/download/v0.2.1/ninja-lang_linux_amd64.tar.gz"
-      sha256 "22e68ae0db4add0534b7bc18dcb8d56ee68d04852bab795d7402551f821f0edc"
-
-      def install
-        bin.install "ninja-lang"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gravataLonga/ninja/releases/download/v0.2.1/ninja-lang_linux_arm64.tar.gz"
-      sha256 "e44b8bd619d330a555eb969500ea3db4f2ccfce5b097436fb86351bee87b79e9"
+      url "https://github.com/gravataLonga/ninja/releases/download/v0.2.2/ninja-lang_linux_amd64.tar.gz"
+      sha256 "727f52a1be6ba52f1703a6f803644cb9f78830beb0dbe893138e6469d1dd71c1"
 
       def install
         bin.install "ninja-lang"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/gravataLonga/ninja/releases/download/v0.2.1/ninja-lang_linux_arm.tar.gz"
-      sha256 "5ef749d539dc201e5ef1eb7e80c2e313eb30d4c1c701f9fabc97b3a7205716fb"
+      url "https://github.com/gravataLonga/ninja/releases/download/v0.2.2/ninja-lang_linux_arm.tar.gz"
+      sha256 "15ce64a52eea8198297c4e421008e7af57f166719994bf4d0f0db6199f436ce4"
+
+      def install
+        bin.install "ninja-lang"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gravataLonga/ninja/releases/download/v0.2.2/ninja-lang_linux_arm64.tar.gz"
+      sha256 "7fc1c433053e3f254ef1548a1e5bf0c1dd515e188ff43c8a03ad2d5fed9fda8b"
 
       def install
         bin.install "ninja-lang"
